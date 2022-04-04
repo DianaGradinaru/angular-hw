@@ -21,10 +21,22 @@ export class PacientiComponent implements OnInit {
   }
 
   deletePacient(pacient: Pacient) {
-    this.pacientService
+    if (confirm("Doriti sa stergeti pacientul din baza de date?")) {
+      
+      this.pacientService
       .deletePacient(pacient)
       .subscribe(
         () => (this.pacienti = this.pacienti.filter(
           (p) => p.id !== pacient.id)));
+    } else {
+      console.log('pacientul nu a fost scos din baza de date');
+        }
+  }
+
+  editPacient(pacient: Pacient) {
+    pacient.nume = "test"
+    this.pacientService
+      .editPacient(pacient)
+      .subscribe()
   }
 }

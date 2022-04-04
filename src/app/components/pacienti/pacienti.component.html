@@ -1,3 +1,5 @@
+<app-add-pacient></app-add-pacient>
+
 <div class="pacient">
   <table>
     <thead>
@@ -9,6 +11,7 @@
         <th>CNP</th>
         <th>Nr Telefon</th>
         <th>Sterge pacient</th>
+        <th>Editeaza</th>
       </tr>
     </thead>
     <tbody>
@@ -17,6 +20,7 @@
         *ngFor="let pacient of pacienti"
         [pacient]="pacient"
         (onDeletePacient)="deletePacient(pacient)"
+        (onEditPacient)="editPacient(pacient)"
       ></tr>
     </tbody>
   </table>

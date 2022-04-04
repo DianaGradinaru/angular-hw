@@ -3,6 +3,12 @@ import { HttpClient, HttpHeaders} from '@angular/common/http'
 import { Observable } from 'rxjs';
 import { Pacient } from '../Pacient';
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type': 'application/json'
+  })
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,5 +27,11 @@ export class PacientService {
     const url = `${this.apiUrl}/${pacient.id}`;
     return this.http
       .delete<Pacient>(url)
+  }
+
+  editPacient(pacient: Pacient): Observable<Pacient> {
+    const url = `${this.apiUrl}/${pacient.id}`;
+    return this.http
+      .put<Pacient>(url, pacient, httpOptions);
   }
 }

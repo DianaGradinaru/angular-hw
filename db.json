@@ -2,7 +2,7 @@
   "pacienti": [
     {
       "id": 1,
-      "nume": "Ana",
+      "nume": "test",
       "prenume": "Popescu",
       "dataNasterii": "2/2/2000",
       "sex": "F",
@@ -24,6 +24,15 @@
       "prenume": "Ionescu",
       "dataNasterii": "4/4/1980",
       "sex": "F",
+      "cnp": 2888888888888,
+      "telefon": "0733123125"
+    },
+    {
+      "id": 4,
+      "nume": "wrrw",
+      "prenume": "wwrwu",
+      "dataNasterii": "4/4/1980",
+      "sex": "M",
       "cnp": 2888888888888,
       "telefon": "0733123125"
     }
