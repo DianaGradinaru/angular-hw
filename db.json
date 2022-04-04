@@ -1,33 +1,6 @@
 {
   "pacienti": [
     {
-      "id": 1,
-      "nume": "wfwegwegw",
-      "prenume": "Popescu",
-      "dataNasterii": "2/2/2000",
-      "sex": "F",
-      "cnp": 2888888888888,
-      "telefon": "0733123123"
-    },
-    {
-      "id": 2,
-      "nume": "wegweg",
-      "prenume": "Georgescu",
-      "dataNasterii": "3/3/2001",
-      "sex": "M",
-      "cnp": 1888888888888,
-      "telefon": "0733123124"
-    },
-    {
-      "id": 3,
-      "nume": "tewegwgest",
-      "prenume": "Ionescu",
-      "dataNasterii": "4/4/1980",
-      "sex": "F",
-      "cnp": 2888888888888,
-      "telefon": "0733123125"
-    },
-    {
       "nume": "Maria ",
       "prenume": "Popescu",
       "dataNasterii": "1985-02-05",
@@ -62,6 +35,24 @@
       "cnp": 1836644927645,
       "telefon": "0723123456",
       "id": 7
+    },
+    {
+      "nume": "Johnnifer",
+      "prenume": "Name",
+      "dataNasterii": "2015-01-29",
+      "sex": "M",
+      "cnp": 1223344556677,
+      "telefon": "0734780974",
+      "id": 8
+    },
+    {
+      "nume": "Nume",
+      "prenume": "Prenume",
+      "dataNasterii": "1999-08-18",
+      "sex": "F",
+      "cnp": 2119984746565,
+      "telefon": "0712345677",
+      "id": 9
     }
   ]
 }

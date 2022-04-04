@@ -1,5 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { UiService } from 'src/app/services/ui.service';
+import { Subscription } from 'rxjs';
 import * as moment from 'moment';
 import { Pacient } from 'src/app/Pacient';
 
@@ -17,8 +19,14 @@ export class AddPacientComponent implements OnInit {
   sex!: string;
   cnp!: number;
   telefon!: number;
+  showAddPacient!: boolean;
+  subscription!: Subscription;
 
-  constructor() {}
+  constructor(private uiService: UiService) {
+    this.subscription = this.uiService
+      .onToggle()
+      .subscribe((value) => (this.showAddPacient = value));
+  }
 
   ngOnInit(): void {}
   onSubmit(form: NgForm) {
