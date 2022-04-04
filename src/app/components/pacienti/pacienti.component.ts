@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pacient } from 'src/app/Pacient';
-import { PACIENTI } from 'src/app/mock-pacients';
+import { PacientService } from 'src/app/services/pacient.service';
 
 @Component({
   selector: 'app-pacienti',
@@ -9,11 +9,14 @@ import { PACIENTI } from 'src/app/mock-pacients';
 })
 export class PacientiComponent implements OnInit {
 
-  pacienti: Pacient[] = PACIENTI;
+  pacienti: Pacient[] = [];
   
-  constructor() { }
+  constructor(private pacientService: PacientService) { }
 
   ngOnInit(): void {
+    this.pacientService
+      .getPacienti()
+      .subscribe((pacienti) => this.pacienti = pacienti)
   }
 
 }
