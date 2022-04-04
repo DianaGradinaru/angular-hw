@@ -1,14 +1,21 @@
 <div class="container">
-  <form>
+  <form class="add-form" (ngSubmit)="onSubmit()">
     <div class="form-control">
       <label for="nume">Nume</label>
-      <input type="text" name="nume" id="nume" placeholder="Adauga nume" />
+      <input
+        type="text"
+        name="nume"
+        [(ngModel)]="nume"
+        id="nume"
+        placeholder="Adauga nume"
+      />
     </div>
     <div class="form-control">
       <label for="prenume">Prenume</label>
       <input
         type="text"
         name="prenume"
+        [(ngModel)]="prenume"
         id="prenume"
         placeholder="Adauga prenume"
       />
@@ -18,29 +25,41 @@
       <input
         type="date"
         name="dataNasterii"
+        [(ngModel)]="dataNasterii"
         id="dataNasterii"
         placeholder="Adauga dataNasterii"
       />
     </div>
     <div class="form-control custom-select">
       <label for="sex">Sexul persoanei</label>
-      <select name="sex" id="sex" style="width: 110px">
+      <select name="sex" [(ngModel)]="sex" id="sex" style="width: 110px">
         <option value="M">M</option>
         <option value="F">F</option>
       </select>
     </div>
     <div class="form-control">
       <label for="cnp">cnp</label>
-      <input type="number" name="cnp" id="cnp" placeholder="Adauga CNP" />
+      <input
+        type="number"
+        name="cnp"
+        [(ngModel)]="cnp"
+        id="cnp"
+        ng-model="number"
+        onKeyPress="if(this.value.length==13) return false;"
+        min="0"
+        placeholder="Adauga CNP"
+      />
     </div>
     <div class="form-control">
       <label for="telefon">Numar telefon</label>
       <input
         type="text"
         name="telefon"
+        [(ngModel)]="telefon"
         id="telefon"
         placeholder="Adauga telefon"
       />
     </div>
+    <input type="submit" value="Salveaza Pacient" class="btn btn-block" />
   </form>
 </div>
