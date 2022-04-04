@@ -26,6 +26,42 @@
       "sex": "F",
       "cnp": 2888888888888,
       "telefon": "0733123125"
+    },
+    {
+      "nume": "Maria ",
+      "prenume": "Popescu",
+      "dataNasterii": "1985-02-05",
+      "sex": "F",
+      "cnp": 1850484750308,
+      "telefon": "0765667986",
+      "id": 4
+    },
+    {
+      "nume": "John",
+      "prenume": "Doe",
+      "dataNasterii": "1999-01-01",
+      "sex": "M",
+      "cnp": 1997777777777,
+      "telefon": null,
+      "id": 5
+    },
+    {
+      "nume": "Oscar",
+      "prenume": "Wilde",
+      "dataNasterii": "1901-03-31",
+      "sex": "M",
+      "cnp": null,
+      "telefon": null,
+      "id": 6
+    },
+    {
+      "nume": "Jessica",
+      "prenume": "Jones",
+      "dataNasterii": "1983-07-17",
+      "sex": "F",
+      "cnp": 1836644927645,
+      "telefon": "0723123456",
+      "id": 7
     }
   ]
 }
