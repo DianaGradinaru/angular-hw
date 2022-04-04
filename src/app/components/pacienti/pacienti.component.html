@@ -1,0 +1,29 @@
+<div class="pacient">
+  <table>
+    <thead>
+      <tr>
+        <th>Nume</th>
+        <th>Prenume</th>
+        <th>Data nasterii</th>
+        <th>Sex</th>
+        <th>CNP</th>
+        <th>Nr Telefon</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        app-pacient-item
+        *ngFor="let pacient of pacienti"
+        [pacient]="pacient"
+      ></tr>
+      <!-- <tr>
+        <td>{{ pacient.nume }}</td>
+        <td>{{ pacient.prenume }}</td>
+        <td>{{ pacient.dataNasterii }}</td>
+        <td>{{ pacient.sex }}</td>
+        <td>{{ pacient.cnp }}</td>
+        <td>{{ pacient.telefon }}</td>
+      </tr> -->
+    </tbody>
+  </table>
+</div>
