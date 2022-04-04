@@ -1,5 +1,5 @@
 <div class="container">
-  <form class="add-form" (ngSubmit)="onSubmit()">
+  <form class="add-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
     <div class="form-control">
       <label for="nume">Nume</label>
       <input

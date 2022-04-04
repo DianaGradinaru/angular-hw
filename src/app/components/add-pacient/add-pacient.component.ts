@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import * as moment from 'moment';
+import { Pacient } from 'src/app/Pacient';
 
 @Component({
   selector: 'app-add-pacient',
@@ -7,6 +9,8 @@ import * as moment from 'moment';
   styleUrls: ['./add-pacient.component.css'],
 })
 export class AddPacientComponent implements OnInit {
+  @Output() onAddPacient: EventEmitter<Pacient> = new EventEmitter();
+
   nume!: string;
   prenume!: string;
   dataNasterii!: Date;
@@ -17,7 +21,7 @@ export class AddPacientComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  onSubmit() {
+  onSubmit(form: NgForm) {
     if (!this.nume || !this.prenume || !this.dataNasterii || !this.sex) {
       alert('Campurile Nume, Prenume, Data Nașterii, Sex sunt obligatorii');
     }
@@ -31,5 +35,18 @@ export class AddPacientComponent implements OnInit {
     if (dateDifferenceinDays <= 0) {
       alert('Data nasterii trebuie sa fie in trecut');
     }
+
+    const newPacient = {
+      nume: this.nume,
+      prenume: this.prenume,
+      dataNasterii: this.dataNasterii,
+      sex: this.sex,
+      cnp: this.cnp,
+      telefon: this.telefon,
+    };
+
+    this.onAddPacient.emit(newPacient);
+
+    form.resetForm();
   }
 }
