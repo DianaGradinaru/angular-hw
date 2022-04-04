@@ -16,7 +16,15 @@ export class PacientiComponent implements OnInit {
   ngOnInit(): void {
     this.pacientService
       .getPacienti()
-      .subscribe((pacienti) => this.pacienti = pacienti)
+      .subscribe(
+        (pacienti) => this.pacienti = pacienti)
   }
 
+  deletePacient(pacient: Pacient) {
+    this.pacientService
+      .deletePacient(pacient)
+      .subscribe(
+        () => (this.pacienti = this.pacienti.filter(
+          (p) => p.id !== pacient.id)));
+  }
 }

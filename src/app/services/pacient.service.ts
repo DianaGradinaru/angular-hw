@@ -1,17 +1,25 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders} from '@angular/common/http'
+import { Observable } from 'rxjs';
 import { Pacient } from '../Pacient';
-import { PACIENTI } from '../mock-pacients';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PacientService {
 
-  constructor() { }
+  private apiUrl = 'http://localhost:5000/pacienti'
+
+  constructor(private http:HttpClient) { }
 
   getPacienti(): Observable<Pacient[]> {
-    const pacienti = of(PACIENTI)
-    return pacienti;
+    return this.http
+      .get<Pacient[]>(this.apiUrl);
+  }
+
+  deletePacient(pacient: Pacient): Observable<Pacient> {
+    const url = `${this.apiUrl}/${pacient.id}`;
+    return this.http
+      .delete<Pacient>(url)
   }
 }

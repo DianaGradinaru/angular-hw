@@ -5,5 +5,9 @@
 <td>{{ pacient.cnp }}</td>
 <td>{{ pacient.telefon }}</td>
 <td>
-  <app-button color="red" text="Sterge"></app-button>
+  <app-button
+    (click)="onDelete(pacient)"
+    color="red"
+    text="Sterge"
+  ></app-button>
 </td>

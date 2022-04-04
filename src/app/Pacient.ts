@@ -1,5 +1,5 @@
 export interface Pacient {
-    nrOrdine?: number,
+    id?: number,
     nume: string,
     prenume: string,
     dataNasterii: string,

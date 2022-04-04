@@ -16,6 +16,7 @@
         app-pacient-item
         *ngFor="let pacient of pacienti"
         [pacient]="pacient"
+        (onDeletePacient)="deletePacient(pacient)"
       ></tr>
     </tbody>
   </table>
