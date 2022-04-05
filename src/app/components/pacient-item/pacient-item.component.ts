@@ -5,28 +5,18 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: '[app-pacient-item]',
   templateUrl: './pacient-item.component.html',
-  styleUrls: ['./pacient-item.component.css']
+  styleUrls: ['./pacient-item.component.css'],
 })
 export class PacientItemComponent implements OnInit {
-
   @Input() pacient!: Pacient;
   @Output() onDeletePacient: EventEmitter<Pacient> = new EventEmitter();
-  @Output() onEditPacient: EventEmitter<Pacient> = new EventEmitter();
   faTimes = faTimes;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onDelete(pacient) {
-    this.onDeletePacient
-      .emit(pacient)
+    this.onDeletePacient.emit(pacient);
   }
-
-  onEdit(pacient) {
-    this.onEditPacient
-    .emit(pacient)
-  }
-
 }

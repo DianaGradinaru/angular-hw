@@ -31,11 +31,6 @@ export class PacientiComponent implements OnInit {
     }
   }
 
-  editPacient(pacient: Pacient) {
-    pacient.nume = 'test';
-    this.pacientService.editPacient(pacient).subscribe();
-  }
-
   addPacient(pacient: Pacient) {
     this.pacientService
       .addPacient(pacient)
