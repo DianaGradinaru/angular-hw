@@ -36,4 +36,16 @@ export class PacientiComponent implements OnInit {
       .addPacient(pacient)
       .subscribe((pacient) => this.pacienti.push(pacient));
   }
+
+  editPacient(pacient: Pacient) {
+    console.log(pacient);
+    this.pacientService.editPacient(pacient).subscribe(
+      // () => (this.pacienti = this.pacienti.filter((p) => p.id == pacient.id))
+      () =>
+        (this.pacienti = this.pacienti.map((p) => {
+          if (p.id !== pacient.id) return p;
+          return pacient;
+        }))
+    );
+  }
 }

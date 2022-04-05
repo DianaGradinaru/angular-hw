@@ -10,6 +10,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { PacientiComponent } from './components/pacienti/pacienti.component';
 import { PacientItemComponent } from './components/pacient-item/pacient-item.component';
 import { AddPacientComponent } from './components/add-pacient/add-pacient.component';
+import { EditPacientComponent } from './components/edit-pacient/edit-pacient.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AddPacientComponent } from './components/add-pacient/add-pacient.compon
     ButtonComponent,
     PacientiComponent,
     PacientItemComponent,
-    AddPacientComponent
+    AddPacientComponent,
+    EditPacientComponent
   ],
   imports: [
     BrowserModule,

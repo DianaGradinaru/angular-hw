@@ -1,0 +1,65 @@
+<div *ngIf="showEditPacient" class="container">
+  <form class="edit-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
+    <div class="form-control">
+      <label for="nume">Nume</label>
+      <input
+        type="text"
+        name="nume"
+        [(ngModel)]="nume"
+        id="nume"
+        placeholder="Modifica nume"
+      />
+    </div>
+    <div class="form-control">
+      <label for="prenume">Prenume</label>
+      <input
+        type="text"
+        name="prenume"
+        [(ngModel)]="prenume"
+        id="prenume"
+        placeholder="Modifica prenume"
+      />
+    </div>
+    <div class="form-control">
+      <label for="dataNasterii">Data Nasterii</label>
+      <input
+        type="date"
+        name="dataNasterii"
+        [(ngModel)]="dataNasterii"
+        id="dataNasterii"
+        placeholder="Modifica dataNasterii"
+      />
+    </div>
+    <div class="form-control custom-select">
+      <label for="sex">Sexul persoanei</label>
+      <select name="sex" [(ngModel)]="sex" id="sex">
+        <option value="M">M</option>
+        <option value="F">F</option>
+      </select>
+    </div>
+    <div class="form-control">
+      <label for="cnp">CNP</label>
+      <input
+        type="number"
+        name="cnp"
+        [(ngModel)]="cnp"
+        id="cnp"
+        ng-model="number"
+        onKeyPress="if(this.value.length==13) return false;"
+        min="0"
+        placeholder="Modifica CNP"
+      />
+    </div>
+    <div class="form-control">
+      <label for="telefon">Numar Telefon</label>
+      <input
+        type="text"
+        name="telefon"
+        [(ngModel)]="telefon"
+        id="telefon"
+        placeholder="Modifica telefon"
+      />
+    </div>
+    <input type="submit" value="Salveaza Modificarile" class="btn btn-block" />
+  </form>
+</div>
