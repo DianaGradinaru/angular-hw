@@ -4,6 +4,7 @@ import * as moment from 'moment';
 import { Pacient } from 'src/app/Pacient';
 import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
+import { PacientService } from 'src/app/services/pacient.service';
 
 @Component({
   selector: 'app-edit-pacient',
@@ -12,6 +13,8 @@ import { Subscription } from 'rxjs';
 })
 export class EditPacientComponent implements OnInit {
   @Output() onEditPacient: EventEmitter<Pacient> = new EventEmitter();
+  @Output() pacient: EventEmitter<Pacient> = new EventEmitter();
+
   nume!: string;
   prenume!: string;
   dataNasterii!: Date;
@@ -20,11 +23,16 @@ export class EditPacientComponent implements OnInit {
   telefon!: number;
   showEditPacient!: boolean;
   subscription!: Subscription;
+  id!: number;
 
-  constructor(private uiService: UiService) {
+  constructor(
+    private uiService: UiService,
+    private pacientService: PacientService
+  ) {
     this.subscription = this.uiService
       .onToggleEdit()
       .subscribe((value) => (this.showEditPacient = value));
+    // this.subscription = this.pacientService.getPacient(this.id).subscribe();
   }
 
   ngOnInit(): void {}
@@ -45,6 +53,7 @@ export class EditPacientComponent implements OnInit {
     }
 
     const editedPacient = {
+      id: this.id,
       nume: this.nume,
       prenume: this.prenume,
       dataNasterii: this.dataNasterii,

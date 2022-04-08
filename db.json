@@ -19,22 +19,18 @@
       "id": 5
     },
     {
-      "nume": "Jessica",
-      "prenume": "Jones",
-      "dataNasterii": "1983-07-17",
-      "sex": "F",
-      "cnp": 1836644927645,
-      "telefon": "0723123456",
-      "id": 7
+      "id": 7,
+      "nume": "Name",
+      "prenume": "Surname",
+      "dataNasterii": "2021-12-31",
+      "sex": "M"
     },
     {
-      "nume": "Johnnifer",
-      "prenume": "Name",
-      "dataNasterii": "2015-01-29",
-      "sex": "M",
-      "cnp": 1223344556677,
-      "telefon": "0734780974",
-      "id": 8
+      "id": 8,
+      "nume": "Jessica",
+      "prenume": "Jones",
+      "dataNasterii": "2021-12-31",
+      "sex": "F"
     },
     {
       "nume": "Nume",
@@ -44,6 +40,15 @@
       "cnp": 2119984746565,
       "telefon": "0712345677",
       "id": 9
+    },
+    {
+      "nume": "Ioana",
+      "prenume": "Ionescu",
+      "dataNasterii": "2022-04-05",
+      "sex": "F",
+      "cnp": 2883376463920,
+      "telefon": "0743673027",
+      "id": 10
     }
   ]
 }

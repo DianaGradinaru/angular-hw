@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Pacient } from 'src/app/Pacient';
 import { PacientService } from 'src/app/services/pacient.service';
 
@@ -8,7 +8,9 @@ import { PacientService } from 'src/app/services/pacient.service';
   styleUrls: ['./pacienti.component.css'],
 })
 export class PacientiComponent implements OnInit {
+  @Input() pacient!: Pacient;
   pacienti: Pacient[] = [];
+  id!: number;
 
   constructor(private pacientService: PacientService) {}
 
@@ -18,7 +20,14 @@ export class PacientiComponent implements OnInit {
       .subscribe((pacienti) => (this.pacienti = pacienti));
   }
 
+  addPacient(pacient: Pacient) {
+    this.pacientService
+      .addPacient(pacient)
+      .subscribe((pacient) => this.pacienti.push(pacient));
+  }
+
   deletePacient(pacient: Pacient) {
+    console.log(pacient);
     if (confirm('Doriti sa stergeti pacientul din baza de date?')) {
       this.pacientService
         .deletePacient(pacient)
@@ -31,21 +40,14 @@ export class PacientiComponent implements OnInit {
     }
   }
 
-  addPacient(pacient: Pacient) {
-    this.pacientService
-      .addPacient(pacient)
-      .subscribe((pacient) => this.pacienti.push(pacient));
-  }
-
   editPacient(pacient: Pacient) {
     console.log(pacient);
-    this.pacientService.editPacient(pacient).subscribe(
-      // () => (this.pacienti = this.pacienti.filter((p) => p.id == pacient.id))
-      () =>
-        (this.pacienti = this.pacienti.map((p) => {
-          if (p.id !== pacient.id) return p;
-          return pacient;
-        }))
-    );
+    this.pacientService
+      .editPacient(pacient)
+      .subscribe(() =>
+        (this.pacienti = this.pacienti.filter((p) => p.id == pacient.id)).push(
+          pacient
+        )
+      );
   }
 }

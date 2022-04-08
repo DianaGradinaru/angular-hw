@@ -10,10 +10,10 @@
     color="red"
     text="Sterge"
   ></app-button>
-</td>
-<td>
+  <!-- </td>
+<td> -->
   <app-button
-    (click)="toggleEditPacient(pacient.id)"
+    (click)="editPacient(pacient); toggleEditPacient()"
     color="{{ showEditPacient ? 'red' : 'green' }}"
     text="{{ showEditPacient ? 'Inchide' : 'Editeaza' }}"
   ></app-button>
