@@ -20,7 +20,7 @@ export class UiService {
     return this.subject.asObservable();
   }
 
-  toggleEditPacient(id): void {
+  toggleEditPacient(): void {
     this.showEditPacient = !this.showEditPacient;
     this.subjectEdit.next(this.showEditPacient);
   }

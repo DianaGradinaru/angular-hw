@@ -45,6 +45,7 @@ export class AddPacientComponent implements OnInit {
     }
 
     const newPacient = {
+      // id: 1,
       nume: this.nume,
       prenume: this.prenume,
       dataNasterii: this.dataNasterii,

@@ -3,7 +3,6 @@ import { Pacient } from 'src/app/Pacient';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import { UiService } from 'src/app/services/ui.service';
 import { Subscription } from 'rxjs';
-import { PacientService } from 'src/app/services/pacient.service';
 
 @Component({
   selector: '[app-pacient-item]',
@@ -13,24 +12,17 @@ import { PacientService } from 'src/app/services/pacient.service';
 export class PacientItemComponent implements OnInit {
   @Input() pacient!: Pacient;
   @Output() onDeletePacient: EventEmitter<Pacient> = new EventEmitter();
+  @Output() onEditPacient: EventEmitter<Pacient> = new EventEmitter();
+
   faTimes = faTimes;
   showEditPacient!: boolean;
   subscription!: Subscription;
   subscriptionEdit!: Subscription;
 
-  constructor(
-    private uiService: UiService,
-    private pacientService: PacientService
-  ) {
+  constructor(private uiService: UiService) {
     this.subscription = this.uiService
       .onToggleEdit()
       .subscribe((value) => (this.showEditPacient = value));
-    this.subscriptionEdit = this.pacientService
-      .getPacienti()
-      // .subscribe((pacienti) => {
-      //   return pacienti.find((p) => p.id == this.pacient.id);
-      // });
-      .subscribe((pacienti) => pacienti.find((p) => p.id == this.pacient.id));
   }
 
   ngOnInit(): void {}
@@ -39,8 +31,13 @@ export class PacientItemComponent implements OnInit {
     this.onDeletePacient.emit(pacient);
   }
 
-  toggleEditPacient(id) {
-    let pacientId = this.subscriptionEdit;
-    this.uiService.toggleEditPacient(pacientId);
+  editPacient(pacient) {
+    console.log(pacient);
+    this.onEditPacient.emit(pacient);
+  }
+
+  toggleEditPacient() {
+    console.log(this.pacient.id);
+    this.uiService.toggleEditPacient();
   }
 }
